@@ -6,7 +6,7 @@ This is usefull for Data management.
 ## Quick Documentation
 It's simple to create a variant and store a value inside : `Variant v = new Variant("toto");` for creating a variant who store a string, for example.
 
-A variant can be read with several types. Conversion is automatic. If not possible, a VariantException is thrown. For exemple :
+A variant can be read with several types. Conversion is automatic. If not possible, a `VariantException` is thrown. For exemple :
 ```
 Variant v = new Variant("15");
 int i = v.AsInt(); // contains 15
@@ -17,16 +17,17 @@ string s= v2.AsString(); // contains "true"
 int i = v2.AsInt(); // contains 1
 ```
 
-It's possible to know what type is store in the Variant, with its `Type` property.
+It's possible to know what type is store in the `Variant`, with its `Type` property.
 
 It's possible to know if a variant can be converted, for example :
 ```
 Variant v = new Variant("13.5");
 bool b = v.CanBeConvertedInto(TypeVariant.Integer) ;  // is false
 b = v.CanBeConvertedInto(TypeVariant.Float);  // is true
+b = v.CanBeConvertedInto(TypeVariant.String); // is true
 ```
 
-A Variant can be converted (VariantException is thrown if not possible), for example :
+A Variant can be converted (`VariantException` is thrown if not possible), for example :
 ```
 Variant v = new Variant("13");
 v.Convert(TypeVariant.Integer);
